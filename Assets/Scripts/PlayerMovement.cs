@@ -278,9 +278,12 @@ public class PlayerMovement : MonoBehaviour
         
         if (other.gameObject.CompareTag("PacmanButler"))
         {
-            health--;
-            healthText.text = "Life: " + health.ToString();
-            if (health == 0)
+            if (health > 0)
+            {
+                health--;
+                healthText.text = "Life: " + health.ToString();
+            }
+            if (health == 0 && !gameOver)
             {
                 playerDeath();
             }

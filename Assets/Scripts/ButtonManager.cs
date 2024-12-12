@@ -38,19 +38,31 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene("TitleScreen");
         //GameObject.FindGameObjectWithTag("Music").GetComponent<MusicManager>().PlayMusic();
-        GameObject.FindGameObjectWithTag("MusicLevel1").GetComponent<MusicManager>().StopMusic();
-        Destroy(GameObject.FindGameObjectWithTag("MusicLevel1"));
-        GameObject.FindGameObjectWithTag("MusicLevel2").GetComponent<MusicManager>().StopMusic();
-        Destroy(GameObject.FindGameObjectWithTag("MusicLevel2"));
+        if (GameObject.FindGameObjectWithTag("MusicLevel1") != null)
+        {
+            GameObject.FindGameObjectWithTag("MusicLevel1").GetComponent<MusicManager>().StopMusic();
+            Destroy(GameObject.FindGameObjectWithTag("MusicLevel1"));
+        }
+        if (GameObject.FindGameObjectWithTag("MusicLevel2") != null)
+        {
+            GameObject.FindGameObjectWithTag("MusicLevel2").GetComponent<MusicManager>().StopMusic();
+            Destroy(GameObject.FindGameObjectWithTag("MusicLevel2"));
+        }
     }
     public void MazeSelect()
     {
         SceneManager.LoadScene("MazeSelect");
         GameObject.FindGameObjectWithTag("Music").GetComponent<MusicManager>().PlayMusic();
-        GameObject.FindGameObjectWithTag("MusicLevel1").GetComponent<MusicManager>().StopMusic();
-        Destroy(GameObject.FindGameObjectWithTag("MusicLevel1"));
-        GameObject.FindGameObjectWithTag("MusicLevel2").GetComponent<MusicManager>().StopMusic();
-        Destroy(GameObject.FindGameObjectWithTag("MusicLevel2"));
+        if (GameObject.FindGameObjectWithTag("MusicLevel1") != null)
+        {
+            GameObject.FindGameObjectWithTag("MusicLevel1").GetComponent<MusicManager>().StopMusic();
+            Destroy(GameObject.FindGameObjectWithTag("MusicLevel1"));
+        }
+        if (GameObject.FindGameObjectWithTag("MusicLevel2") != null)
+        {
+            GameObject.FindGameObjectWithTag("MusicLevel2").GetComponent<MusicManager>().StopMusic();
+            Destroy(GameObject.FindGameObjectWithTag("MusicLevel2"));
+        }
     }
     public void deletePlayerprefs()
     {
